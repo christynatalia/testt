@@ -8,15 +8,15 @@ Created on Sat Dec 21 13:38:02 2019
 
 class Data():
     def __init__(self):
-        self.nilaiA = int(input("Input the A= "))
-        self.nilaiB = int(input("Input the B= "))
-        self.nilaiC = int(input("Input the C= "))
+        self.__nilaiA = int(input("Input the A= "))
+        self.__nilaiB = int(input("Input the B= "))
+        self.__nilaiC = int(input("Input the C= "))
         
     def newNilaiA(self):
-        return self.nilaiA
+        return self.__nilaiA
 
     def newNilaiB(self):
-        return self.nilaiB
+        return self.__nilaiB
     
     def newNilaiC(self):
-        return self.nilaiC
+        return self.__nilaiC
