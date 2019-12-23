@@ -20,6 +20,9 @@ from setttings import Introduction
 
 import sys
 
+
+
+
 while True:
     intro = Introduction()
     intromsg = intro.programintro()
@@ -62,7 +65,7 @@ while True:
         def highestpoint():
             global highx
             global highy
-            highx = -(hasilB) / (2 * hasilA)
+            highx = (-hasilB) / (2 * hasilA)
             highy = -((hasilB**2) - (4*hasilA*hasilC))/ (4*hasilA)
             return highx,highy
         
@@ -70,11 +73,11 @@ while True:
         
         
         def conclusion():
-            if (nilaidiskriminan > 0 and hasilA > 0):
+            if (nilaidiskriminan > 0 and hasilA > 0) or (nilaidiskriminan > 0 and hasilA < 0):
                 value = ("The conclusion is = Grafik memotong sumbu x ")
-            elif (nilaidiskriminan == 0 and hasilA > 0):
+            elif (nilaidiskriminan == 0 and hasilA > 0) or (nilaidiskriminan == 0 and hasilA < 0):
                 value = ("The conclusion is = Grafik menyinggung sumbu x ")
-            elif (nilaidiskriminan < 0 and hasilA > 0):
+            elif (nilaidiskriminan < 0 and hasilA > 0) or (nilaidiskriminan < 0 and hasilA < 0):
                 value = ("The conclusion is garis tidak memotong sumbu x ")
             return value
         
@@ -103,9 +106,9 @@ while True:
         x=numpy.linspace(float(x2),float(x1),50);
         y=(hasilA *( x ** 2)) +(( x * hasilB ))+ hasilC
         pyplot.plot(x,y);
-        plt.scatter(float(highx),float(highy),s=10)
+        plt.scatter(float(highx),float(highy),s=10, c= "blue",label = 'HP=' + '('+ str(highx) + ',' + str(highy)+')')
         plt.scatter(float(x1),float((hasilA *( x1 ** 2)) +(( x1 * hasilB ))+ hasilC), s = 20, c= 'red', label = 'x1('+ str(x1)+ str(')'))
-        plt.scatter(float(x2),float((hasilA *( x2 ** 2)) +(( x2 * hasilB ))+ hasilC), s = 20, c= 'black', label = 'x2')
+        plt.scatter(float(x2),float((hasilA *( x2 ** 2)) +(( x2 * hasilB ))+ hasilC), s = 20, c= 'black', label = 'x2('+ str(x2)+ str(')'))
         plt.legend()
         pyplot.title("Parabola curve")
         pyplot.xlabel("x axis")
@@ -115,9 +118,9 @@ while True:
         plt.show()
         
     else:
-        print("Error")
-        sys.exit()
+        print("You can't assign 0 as A. Please try again.")
     
+
 
     
  
