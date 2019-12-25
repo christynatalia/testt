@@ -20,19 +20,21 @@ from setttings import Introduction
 
 import sys
 
-
-
+a = []
+b = []
+c = []
 
 while True:
     intro = Introduction()
     intromsg = intro.programintro()
-    if intromsg == 'y':
+    intromsg = intromsg.title()
+    if intromsg == 'Yes':
         print("The formula is Ax^{2} + Bx + C")
         hasil = Data()
         hasilA = int(hasil.newNilaiA())
         hasilB = int(hasil.newNilaiB())
         hasilC = int(hasil.newNilaiC())
-    elif intromsg == 'n':
+    elif intromsg == 'No':
         print("bye")
         sys.exit()
     else:
@@ -82,9 +84,16 @@ while True:
             return value
         
         print(conclusion())
-            
-                
         
+        def history():
+            a.append(hasilA)
+            b.append(hasilB)
+            c.append(hasilC)
+            return a,b,c
+        
+        print("History = ",history())
+        
+         
         
         #AT FIRST, I USED THIS ONE BUT IT DIDN'T WORK REALLY WELL. IT'S NOT SAME LIKE THE 
         #REAL QUADRATIC EQUATIONS'S GRAPH.
