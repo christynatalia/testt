@@ -21,9 +21,7 @@ from setttings import Introduction
 import sys
 
 #Make the lists for the history
-a = ['A = ']
-b = ['B = ']
-c = ['C = ']
+historyList = []
 
 #Loop everytime the user type yes on the introduction
 while True:
@@ -87,13 +85,24 @@ while True:
         
         print(conclusion())
         
-        def history():
-            a.append(valueA)
-            b.append(valueB)
-            c.append(valueC)
-            return a,b,c
+        historyList.append(valueA)
+        historyList.append(valueB)
+        historyList.append(valueC)
         
-        print("History = ",history())
+        def printHistory():
+            idx, ctr = 0, 1
+            for history in historyList:
+                if(idx == 2):
+                    print(history)
+                    idx = 0
+                    ctr = ctr + 1
+                else :
+                    if(idx == 0):
+                        print("History", ctr, end = ": ")
+                    print(history, end = ', ')
+                    idx = idx + 1
+        
+        printHistory()
         
          
         
